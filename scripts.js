@@ -1,13 +1,14 @@
 const api_url = 'https://api.github.com/users/';
 
 $(document).ready(function () {
-    $('#sbmt').click(function () {
+    $('#sbmt').click(function (e) {
+        e.preventDefault();
         $('#result').html('');
         if ($('#inputUname').val() != '') {
             fetchuser($('#inputUname').val());
         }
         else {
-            $('#result').html('<p class="text-danger">Please Enter username</p>');
+            $('#result').html('<p class="text-danger text-center">Please Enter username</p>');
         }
     });
 });
@@ -17,7 +18,7 @@ let fetchuser = async (data) => {
     const user = await res.json();
     console.log(user);
     if (user.login == undefined) {
-        $('#result').html('<p class="text-danger">No such user found</p>');
+        $('#result').html('<p class="text-danger text-center">No such user found</p>');
     }
     else {
         displayTemplate(user);
@@ -45,4 +46,5 @@ displayTemplate = (user) => {
     </div>
     </div>
         `);
+    $('#inputUname').val('');
 };
