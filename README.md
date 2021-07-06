@@ -8,7 +8,7 @@ It is a Github profile Viewer made using ES6 and jQuery
 
 - Download or clone the repository
 ```
-git clone https://github.com/Tejas1510/Hacking-Scripts.git
+git clone https://github.com/Saup21/GitHubProfile.git
 ```
 - Go to the directory
 - Run the index.html file
